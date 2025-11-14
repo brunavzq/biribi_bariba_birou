@@ -25,19 +25,48 @@ struct Alimento {
     Alimento *proximo;
 };
 
+// função que conta quantas linhas tem no arquivo .bin para facilitar alocação
+// de memória.
+int count_records(FILE *file) {
+    int count = 0;
+    Alimento temp;
+
+    while (fread(&temp, sizeof(Alimento), 1, file) == 1) {
+        count++;
+    }
+
+    // volta ao começo do arquivo.
+    rewind(file);
+    return count;
+}
+
 int main() {
     FILE *file = fopen("dados.bin", "rb");
     if (file == NULL) {
-        perror("Error opening file");
+        perror("Erro ao abrir arquivo.");
         return 1;
     }
 
-    Alimento alimento;
+    int total = count_records(file);
 
-    while (fread(&alimento, sizeof(Alimento), 1, file) == 1) {
-        printf("ID: %d", alimento.id);
+    Alimento *alimentos = (Alimento *)malloc(total * sizeof(Alimento));
+    if (alimentos == NULL) {
+        printf("Falha no alocamento de memória para a lista encadeada de "
+               "alimentos.*");
+        exit(1);
     }
 
+    size_t read = fread(alimentos, sizeof(Alimento), total, file);
+    printf("Read %zu records\n", read);
     fclose(file);
+
+    for (int i = 0; i < total; i++) {
+        printf("ID: %d, Descrição: %s, Energia: %d, Proteína: %.2f, Categoria: "
+               "%u\n",
+               alimentos[i].id, alimentos[i].descricao, alimentos[i].energia,
+               alimentos[i].proteina, alimentos[i].categoria);
+    }
+
+    free(alimentos);
     return 0;
 }

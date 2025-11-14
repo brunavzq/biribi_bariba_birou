@@ -4,7 +4,7 @@
 
 #define MAX_LINE_LENGTH 1024
 
-void csv_to_bin(const char* csv_file, const char* bin_file){
+void csv_to_bin(const char *csv_file, const char *bin_file) {
     char linha[MAX_LINE_LENGTH];
     FILE *f_csv, *f_bin;
 
@@ -27,18 +27,16 @@ void csv_to_bin(const char* csv_file, const char* bin_file){
         return;
     }
 
-    while(fgets(linha, MAX_LINE_LENGTH, f_csv) != NULL){
+    while (fgets(linha, MAX_LINE_LENGTH, f_csv) != NULL) {
         size_t len = strlen(linha);
         fwrite(linha, sizeof(char), len, f_bin);
     }
 
     fclose(f_csv);
     fclose(f_bin);
-
 }
 
-int main(){
+int main() {
     csv_to_bin("alimentos.csv", "dados.bin");
     return 0;
 }
-
