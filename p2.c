@@ -3,11 +3,52 @@
 #include <stdlib.h>
 #include <string.h>
 
+TipoCategoria string_to_enum(const char *nomeString){
+    if (strcmp(nomeString, "Cereais e derivados") == 0) return CEREAIS_E_DERIVADOS;
+    if (strcmp(nomeString, "Verduras, hortaliças e derivados") == 0) return VERDURAS_HORTALICAS_E_DERIVADOS;
+    if (strcmp(nomeString, "Frutas e derivados") == 0) return FRUTAS_E_DERIVADOS;
+    if (strcmp(nomeString, "Gorduras e óleos") == 0) return GORDURAS_E_OLEOS;
+    if (strcmp(nomeString, "Pescados e frutos do mar") == 0) return PESCADOS_E_FRUTOS_DO_MAR;
+    if (strcmp(nomeString, "Carnes e derivados") == 0) return CARNES_E_DERIVADOS;
+    if (strcmp(nomeString, "Leite e derivados") == 0) return LEITE_E_DERIVADOS;
+    if (strcmp(nomeString, "Bebidas (alcóolicas e não alcoólicas)") == 0) return BEBIDAS;
+    if (strcmp(nomeString, "Ovos e derivados") == 0) return OVOS_E_DERIVADOS;
+    if (strcmp(nomeString, "Produtos açucarados") == 0) return PRODUTOS_ACUCARADOS;
+    if (strcmp(nomeString, "Miscelâneas") == 0) return MISCELANEAS;
+    if (strcmp(nomeString, "Outros alimentos industrializados") == 0) return OUTROS_ALIMENTOS_INDUSTRIALIZADOS;
+    if (strcmp(nomeString, "Alimentos preparados") == 0) return ALIMENTOS_PREPARADOS;
+    if (strcmp(nomeString, "Leguminosas e derivados") == 0) return LEGUMINOSAS_E_DERIVADOS;
+    if (strcmp(nomeString, "Nozes e sementes") == 0) return NOZES_E_SEMENTES;
+    return CATEGORIA_INVALIDA;
+}
+
+const char* enum_to_string(TipoCategoria tipo) {
+    switch (tipo) {
+        case CEREAIS_E_DERIVADOS: return "Cereais e derivados";
+        case VERDURAS_HORTALICAS_E_DERIVADOS: return "Verduras, hortaliças e derivados";
+        case FRUTAS_E_DERIVADOS: return "Frutas e derivados";
+        case GORDURAS_E_OLEOS: return "Gorduras e óleos";
+        case PESCADOS_E_FRUTOS_DO_MAR: return "Pescados e frutos do mar";
+        case CARNES_E_DERIVADOS: return "Carnes e derivados";
+        case LEITE_E_DERIVADOS: return "Leite e derivados";
+        case BEBIDAS: return "Bebidas (alcóolicas e não alcoólicas)";
+        case OVOS_E_DERIVADOS: return "Ovos e derivados";
+        case PRODUTOS_ACUCARADOS: return "Produtos açucarados";
+        case MISCELANEAS: return "Miscelâneas";
+        case OUTROS_ALIMENTOS_INDUSTRIALIZADOS: return "Outros alimentos industrializados";
+        case ALIMENTOS_PREPARADOS: return "Alimentos preparados";
+        case LEGUMINOSAS_E_DERIVADOS: return "Leguminosas e derivados";
+        case NOZES_E_SEMENTES: return "Nozes e sementes";
+        default: return "Categoria Desconhecida";
+    }
+}
+
+
 // Busca uma categoria na lista
-NodeCategoria *buscar_categoria(NodeCategoria *head, const char *nome) {
+NodeCategoria *buscar_categoria(NodeCategoria *head, TipoCategoria tipo) {
     NodeCategoria *current = head;
     while (current != NULL) {
-        if (strcmp(current->nome, nome) == 0) {
+        if (current->tipo == tipo) {
             return current;
         }
         current = current->next;
@@ -40,20 +81,20 @@ NodeArvore* inserir_na_arvore(NodeArvore *raiz, float valor, NodeAlimento *alime
 }
 
 // Insere categoria em ordem alfabética
-void inserir_categoria_ordenada(NodeCategoria **head, const char *nome) {
+void inserir_categoria_ordenada(NodeCategoria **head, TipoCategoria tipo) {
     NodeCategoria *nova_categoria =
         (NodeCategoria *)malloc(sizeof(NodeCategoria));
     if (nova_categoria == NULL)
         return;
 
-    strcpy(nova_categoria->nome, nome);
+    nova_categoria->tipo = tipo;
     nova_categoria->alimentos = NULL;
     nova_categoria->raiz_energia = NULL;
     nova_categoria->raiz_proteina = NULL;
     nova_categoria->next = NULL;
 
     // Lista vazia ou inserir no início
-    if (*head == NULL || strcmp(nome, (*head)->nome) < 0) {
+    if (*head == NULL || tipo < (*head)->tipo) {
         nova_categoria->next = *head;
         *head = nova_categoria;
         return;
@@ -61,7 +102,7 @@ void inserir_categoria_ordenada(NodeCategoria **head, const char *nome) {
 
     // Procura posição correta em ordem alfabética
     NodeCategoria *current = *head;
-    while (current->next != NULL && strcmp(nome, current->next->nome) > 0) {
+    while (current->next != NULL && tipo > current->next->tipo) {
         current = current->next;
     }
 
@@ -71,12 +112,12 @@ void inserir_categoria_ordenada(NodeCategoria **head, const char *nome) {
 
 // Busca ou cria categoria
 NodeCategoria *buscar_ou_criar_categoria(NodeCategoria **head,
-                                         const char *nome) {
-    NodeCategoria *cat = buscar_categoria(*head, nome);
+                                         TipoCategoria tipo) {
+    NodeCategoria *cat = buscar_categoria(*head, tipo);
 
     if (cat == NULL) {
-        inserir_categoria_ordenada(head, nome);
-        cat = buscar_categoria(*head, nome);
+        inserir_categoria_ordenada(head, tipo);
+        cat = buscar_categoria(*head, tipo);
     }
 
     return cat;
@@ -125,8 +166,9 @@ NodeCategoria *ler_arquivo_e_popular(const char *filename) {
 
     // Lê cada alimento do arquivo
     while (fread(&alimento, sizeof(Alimento), 1, file) == 1) {
+        TipoCategoria tipo_cat = string_para_enum(alimento.categoria);
         NodeCategoria *categoria =
-            buscar_ou_criar_categoria(&lista_categorias, alimento.categoria);
+            buscar_ou_criar_categoria(&lista_categorias, tipo_cat);
 
         if (categoria != NULL) {
             NodeAlimento* novo_no_lista = inserir_alimento_ordenado(categoria, alimento);
@@ -156,7 +198,7 @@ void imprimir_tudo(NodeCategoria *head) {
     NodeCategoria *cat = head;
 
     while (cat != NULL) {
-        printf("\n======= Categoria: %s\n", cat->nome);
+        printf("\n======= Categoria: %s\n", enum_to_string(cat->tipo));
 
         NodeAlimento *alim = cat->alimentos;
         while (alim != NULL) {
@@ -203,22 +245,72 @@ void liberar_tudo(NodeCategoria *head) {
 
 // alterações Pedro:
 
-// limpa as entradas para n fuder tudo 
 void limparEntrada() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
 
-// le as entradas por texto dou usuario, por q usuario é burro e c mais ainda
-// a função não deixa lixo no buffer
+
 void lerString(char *destino, int tamanho) {
     fgets(destino, tamanho, stdin);
     destino[strcspn(destino, "\n")] = 0;
 }
 
-// Menuzinho 
+// alterações Marcos das alterações Pedro:
+
+void listarCategorias(NodeCategoria *head){
+    NodeCategoria *cat = head;
+
+    printf("Listagem de categorias:\n\n");
+    while (cat != NULL) {
+        printf("%s\n", enum_to_string(cat->tipo));
+        cat = cat->next;
+    }
+}
+
+void listarAlimentosDaCategoria(NodeCategoria *head, TipoCategoria tipo) {
+    NodeCategoria *categoria_encontrada = buscar_categoria(head, tipo);
+
+    if (categoria_encontrada == NULL) {
+        printf("\nErro: Categoria nao encontrada.\n");
+    } else {
+
+        printf("\n======= Alimentos da Categoria: %s =======\n",
+               enum_to_string(categoria_encontrada->tipo));
+
+        NodeAlimento *alim = categoria_encontrada->alimentos;
+
+        if (alim == NULL) {
+            printf("Nenhum alimento cadastrado nesta categoria.\n");
+        }
+
+        while (alim != NULL) {
+            printf("  - %s (Energia: %.2f Kcal, Proteina: %.2f g)\n",
+                   alim->dados.descricao,
+                   alim->dados.energia,
+                   alim->dados.proteina);
+            alim = alim->next;
+        }
+    }
+}
+
+TipoCategoria perguntarCategoriaValida() {
+    char nome[50];
+    printf("Digite o nome da categoria: ");
+    lerString(nome, 50);
+
+    TipoCategoria tipo = string_to_enum(nome);
+
+    if (tipo == CATEGORIA_INVALIDA) {
+        printf("Erro: Categoria '%s' nao existe.\n", nome);
+    }
+
+    return tipo;
+}
+
+
 int main() {
-    int opcao = 0; // confere a opção que o usuario escolheu 
+    int opcao = 0;
     int houveAlteracoes = 0; // verifica se o usuario escolheu alguma opção que faz alterações, se sim ele muda para 1, e entra no if ao final do codigo
 
     NodeCategoria *categorias = ler_arquivo_e_popular("dados.bin"); // já estava ai, estão deixei kkkkk, mas ele é responsavel por retornar toda a lista completa já montada 
@@ -237,33 +329,37 @@ int main() {
         printf("9 - Sair\n");
         printf("Escolha: ");
 
-        scanf("%d", &opcao);
+        scanf("%1d", &opcao);
         limparEntrada();
 
-        // if é vida né 
 
-        switch (opcao)
-        {
+
+        switch (opcao) {
         case 1:
             listarCategorias(categorias);
+            break;
 
         case 2:
-            char nome[50];
-            printf("Nome da categoria: ");
-            lerString(nome, 50);
-            listarAlimentosDaCategoria(categorias, nome);
+            TipoCategoria tipo = perguntarCategoriaValida();
+            if (tipo != CATEGORIA_INVALIDA) {
+
+            }
+            break;
 
         case 3:
-            char nome[50];
-            printf("Categoria: ");
-            lerString(nome, 50);
-            listarEnergiaDecrescente(categorias, nome);
+            TipoCategoria tipo = perguntarCategoriaValida();
+            if (tipo != CATEGORIA_INVALIDA) {
+                listarEnergiaDecrescente(categorias, tipo);
+            }
+            break;
 
         case 4:
-            char nome[50];
-            printf("Categoria: ");
-            lerString(nome, 50);
-            ListarProteinaDecrecente(categorias, nome);  
+            TipoCategoria tipo = perguntarCategoriaValida();
+            if (tipo != CATEGORIA_INVALIDA) {
+                listarProteinaDecrecente(categorias, tipo); 
+            }
+            
+            break; 
         
         case 5:
             char nome[50];
@@ -281,6 +377,7 @@ int main() {
             limparEntrada();
 
             listarEnergiaIntervalo(categorias, nome, min, max);
+            break;
 
         case 6:
             char nome[50];
@@ -298,6 +395,7 @@ int main() {
             limparEntrada();
 
             listarProteinaIntervalo(categorias, nome, min, max);
+            break;
 
         case 7:
             char nome[50];
@@ -306,6 +404,7 @@ int main() {
 
             removerCategoria(&categorias, nome);
             houveAlteracoes = 1;
+            break;
 
         case 8:
             char nome[50];
@@ -320,9 +419,10 @@ int main() {
 
             removerAlimento(categorias, nome, numero);
             houveAlteracoes = 1;
+            break;
 
         case 9:
-
+        break;
 
         default:
             break;

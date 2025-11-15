@@ -1,9 +1,31 @@
 #define MAX_LINE_LENGTH 1024
 
+// DEPOIS A GENTE VÊ O QUE VAI SER USADO
+typedef enum {
+    ALIMENTOS_PREPARADOS,
+    BEBIDAS,
+    CARNES_E_DERIVADOS,
+    CEREAIS_E_DERIVADOS,
+    FRUTAS_E_DERIVADOS,
+    GORDURAS_E_OLEOS,
+    LEGUMINOSAS_E_DERIVADOS,
+    LEITE_E_DERIVADOS,
+    MISCELANEAS,
+    NOZES_E_SEMENTES,
+    OUTROS_ALIMENTOS_INDUSTRIALIZADOS,
+    OVOS_E_DERIVADOS,
+    PESCADOS_E_FRUTOS_DO_MAR,
+    PRODUTOS_ACUCARADOS,
+    VERDURAS_HORTALICAS_E_DERIVADOS,
+    
+    CATEGORIA_INVALIDA
+} TipoCategoria;
+
+
 typedef struct {
     int numero;
     char descricao[100];
-    char categoria[50];
+    TipoCategoria categoria;
     float energia;
     float proteina;
 } Alimento;
@@ -21,7 +43,7 @@ typedef struct NodeArvore {
 } NodeArvore;
 
 typedef struct NodeCategoria {
-    char nome[50];
+    char tipo;
     NodeAlimento *alimentos;
     NodeArvore *raiz_energia;
     NodeArvore *raiz_proteina;
