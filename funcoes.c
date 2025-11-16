@@ -1,5 +1,7 @@
 #include "funcoes.h"
 
+
+// Retorna um enumerado com base na string passada como parâmetro
 TipoCategoria string_to_enum(const char *nomeString){
     if (strcmp(nomeString, "Cereais e derivados") == 0) return CEREAIS_E_DERIVADOS;
     if (strcmp(nomeString, "Verduras, hortalicas e derivados") == 0) return VERDURAS_HORTALICAS_E_DERIVADOS;
@@ -19,6 +21,7 @@ TipoCategoria string_to_enum(const char *nomeString){
     return CATEGORIA_INVALIDA;
 }
 
+// Retorna uma string com base no enumerado passado como parâmetro
 const char* enum_to_string(TipoCategoria tipo) {
     switch (tipo) {
         case CEREAIS_E_DERIVADOS: return "Cereais e derivados";
@@ -41,7 +44,8 @@ const char* enum_to_string(TipoCategoria tipo) {
 }
 
 
-// Busca uma categoria na lista
+// Busca uma categoria específica a partir da lista de categorias
+// Retorna a categoria caso a encontre, e NULL caso contrário
 NodeCategoria *buscar_categoria(NodeCategoria *head, TipoCategoria tipo) {
     NodeCategoria *current = head;
     while (current != NULL) {
@@ -53,6 +57,8 @@ NodeCategoria *buscar_categoria(NodeCategoria *head, TipoCategoria tipo) {
     return NULL;
 }
 
+// Insere um alimento e seu respectivo valor em uma árvore
+// Retorna o ponteiro para o novo nó
 NodeArvore* inserir_na_arvore(NodeArvore *raiz, float valor, NodeAlimento *alimento) {
     if (raiz == NULL) {
         NodeArvore* novo_no = (NodeArvore*) malloc(sizeof(NodeArvore));
@@ -77,7 +83,8 @@ NodeArvore* inserir_na_arvore(NodeArvore *raiz, float valor, NodeAlimento *alime
     return raiz;
 }
 
-// Insere categoria em ordem alfabética
+
+// Insere a categoria de forma ordenada na lista de categorias
 void inserir_categoria_ordenada(NodeCategoria **head, TipoCategoria tipo) {
     NodeCategoria *nova_categoria =
         (NodeCategoria *)malloc(sizeof(NodeCategoria));
@@ -90,14 +97,14 @@ void inserir_categoria_ordenada(NodeCategoria **head, TipoCategoria tipo) {
     nova_categoria->raiz_proteina = NULL;
     nova_categoria->next = NULL;
 
-    // Lista vazia ou inserir no início
+
     if (*head == NULL || tipo < (*head)->tipo) {
         nova_categoria->next = *head;
         *head = nova_categoria;
         return;
     }
 
-    // Procura posicão correta em ordem alfabética
+
     NodeCategoria *current = *head;
     while (current->next != NULL && tipo > current->next->tipo) {
         current = current->next;
@@ -107,7 +114,8 @@ void inserir_categoria_ordenada(NodeCategoria **head, TipoCategoria tipo) {
     current->next = nova_categoria;
 }
 
-// Busca ou cria categoria
+
+// Busca uma categoria na lista ou a cria se não existir
 NodeCategoria *buscar_ou_criar_categoria(NodeCategoria **head,
                                          TipoCategoria tipo) {
     NodeCategoria *cat = buscar_categoria(*head, tipo);
@@ -120,7 +128,8 @@ NodeCategoria *buscar_ou_criar_categoria(NodeCategoria **head,
     return cat;
 }
 
-// Insere alimento em ordem alfabética dentro da categoria
+
+// Insere um novo alimento em ordem alfabética em sua respectiva categoria
 NodeAlimento* inserir_alimento_ordenado(NodeCategoria *categoria, Alimento alimento) {
     NodeAlimento *novo_alimento = (NodeAlimento *)malloc(sizeof(NodeAlimento));
     if (novo_alimento == NULL)
@@ -129,7 +138,7 @@ NodeAlimento* inserir_alimento_ordenado(NodeCategoria *categoria, Alimento alime
     novo_alimento->dados = alimento;
     novo_alimento->next = NULL;
 
-    // Lista vazia ou inserir no início
+
     if (categoria->alimentos == NULL ||
         strcmp(alimento.descricao, categoria->alimentos->dados.descricao) < 0) {
         novo_alimento->next = categoria->alimentos;
@@ -137,7 +146,7 @@ NodeAlimento* inserir_alimento_ordenado(NodeCategoria *categoria, Alimento alime
         return novo_alimento;
     }
 
-    // Procura posicão correta em ordem alfabética
+
     NodeAlimento *current = categoria->alimentos;
     while (current->next != NULL &&
            strcmp(alimento.descricao, current->next->dados.descricao) > 0) {
@@ -150,7 +159,9 @@ NodeAlimento* inserir_alimento_ordenado(NodeCategoria *categoria, Alimento alime
     return novo_alimento;
 }
 
-// Funcão principal que lê o arquivo e popula tudo
+
+// Lê o arquivo .csv e coloca suas informações no arquivo dados.bin
+// de acordo com a estrutura dos dados definida.
 NodeCategoria *ler_arquivo_e_popular(const char *filename) {
     FILE *file = fopen(filename, "rb");
     if (file == NULL) {
@@ -161,7 +172,7 @@ NodeCategoria *ler_arquivo_e_popular(const char *filename) {
     NodeCategoria *lista_categorias = NULL;
     Alimento alimento;
 
-    // Lê cada alimento do arquivo
+
     while (fread(&alimento, sizeof(Alimento), 1, file) == 1) {
         TipoCategoria tipo_cat = string_to_enum(alimento.categoria);
         NodeCategoria *categoria =
@@ -190,25 +201,8 @@ NodeCategoria *ler_arquivo_e_popular(const char *filename) {
     return lista_categorias;
 }
 
-// Funcão para imprimir tudo
-void imprimir_tudo(NodeCategoria *head) {
-    NodeCategoria *cat = head;
 
-    while (cat != NULL) {
-        printf("\n======= Categoria: %s\n", enum_to_string(cat->tipo));
-
-        NodeAlimento *alim = cat->alimentos;
-        while (alim != NULL) {
-            printf("  - %s (Energia: %.2f, Proteína: %.2f)\n",
-                   alim->dados.descricao, alim->dados.energia,
-                   alim->dados.proteina);
-            alim = alim->next;
-        }
-
-        cat = cat->next;
-    }
-}
-
+// Libera a memória destinada à arvore passada como parâmetro
 void liberar_arvore(NodeArvore* raiz){
     if (raiz == NULL) return;
     NodeArvore* left_tree = raiz->esquerda;
@@ -220,7 +214,9 @@ void liberar_arvore(NodeArvore* raiz){
     free(raiz);
 }
 
-// Libera toda a memoria
+
+// Libera a memória destinada à lista de categorias
+// e chama liberar_arvore() para fazer o mesmo com árvores.
 void liberar_tudo(NodeCategoria *head) {
     while (head != NULL) {
         NodeCategoria *next_cat = head->next;
@@ -240,21 +236,22 @@ void liberar_tudo(NodeCategoria *head) {
     }
 }
 
-// alteracões Pedro:
 
+// Limpa o buffer (usada depois do input do usuário)
 void limparEntrada() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
 
 
+// Lê uma string passada pelo usuário
 void lerString(char *destino, int tamanho) {
     fgets(destino, tamanho, stdin);
     destino[strcspn(destino, "\n")] = 0;
 }
 
-// alteracões Marcos das alteracões Pedro:
 
+// Lista todas as categorias para o usuário
 void listarCategorias(NodeCategoria *head){
     NodeCategoria *cat = head;
 
@@ -265,6 +262,8 @@ void listarCategorias(NodeCategoria *head){
     }
 }
 
+
+// Lista todos os alimentos de determinada categoria escolhida pelo usuário
 void listarAlimentosDaCategoria(NodeCategoria *head, TipoCategoria tipo) {
     NodeCategoria *categoria_encontrada = buscar_categoria(head, tipo);
 
@@ -292,6 +291,8 @@ void listarAlimentosDaCategoria(NodeCategoria *head, TipoCategoria tipo) {
     }
 }      
 
+
+// Pergunta ao usuário uma categoria e espera um resultado válido
 TipoCategoria perguntarCategoriaValida() {
     TipoCategoria tipo = CATEGORIA_INVALIDA;
     do {
@@ -306,26 +307,23 @@ TipoCategoria perguntarCategoriaValida() {
 }
 
 
-// funcão 3, serve para todos os alimentos de certa categoria em ordem decresente com base na kcal
-//essa é uma funcão auxiliar que auxilia (auxiliar q auxilia é foda kkkk) a ler a arvore de forma decrecente se baseando na energia 
+// Passa por todos os nós da árvore de energia, do valor mais alto ao mais baixo
 void percorrerEnergiaDecrescente(NodeArvore *raiz) {
     if (raiz == NULL)
         return;
 
-    // Maior energia primeiro
     percorrerEnergiaDecrescente(raiz->direita);
 
-    // Exibe o alimento do no
     printf(" - %s | Energia: %.2f Kcal | Proteína: %.2f g\n",
            raiz->alimento->dados.descricao,
            raiz->alimento->dados.energia,
            raiz->alimento->dados.proteina);
 
-    // Valores menores depois
     percorrerEnergiaDecrescente(raiz->esquerda);
 }
 
-//essa é a parte q a funcão main chama, que é responsavel por listar em ordem decrecente esses alimentos ultilizando a funcão auxiliar 
+
+// Lista Todos os alimentos em ordem decrescente de nível de energia
 void listarEnergiaDecrescente(NodeCategoria *head, TipoCategoria tipo) {
     NodeCategoria *cat = buscar_categoria(head, tipo);
 
@@ -342,29 +340,30 @@ void listarEnergiaDecrescente(NodeCategoria *head, TipoCategoria tipo) {
         return;
     }
 
-    percorrerEnergiaDecrescente(cat->raiz_energia);//é a ligacão de uma funcão na outra 
+    percorrerEnergiaDecrescente(cat->raiz_energia);
 }
 
-//funcão 4: lista uma categoria q o usuario escolher de forma decrecente so que agora se baseando na proteina
-//essa é a funcão auxiliar que ajuda a percorrer a arvore de forma decrecente usando a proteina para isso 
+
+// Passa por todos os nós da árvore de proteína, do valor mais alto ao mais baixo
 void percorrerProteinaDecrescente(NodeArvore *raiz) {
     if (raiz == NULL)
         return;
 
-    //Maior proteína primeiro
+
     percorrerProteinaDecrescente(raiz->direita);
 
-    // Imprime o alimento do no atual
+
     printf(" - %s | Proteína: %.2f g | Energia: %.2f Kcal\n",
            raiz->alimento->dados.descricao,
            raiz->alimento->dados.proteina,
            raiz->alimento->dados.energia);
 
-    // 3. Depois os menores
+
     percorrerProteinaDecrescente(raiz->esquerda);
 }
 
-//a funcão ligada ao main(), faz literalmente oq a funcão 3 faz so q para proteinas agora
+
+// Lista Todos os alimentos em ordem decrescente de nível de proteína
 void listarProteinaDecrescente(NodeCategoria *head, TipoCategoria tipo) {
     NodeCategoria *cat = buscar_categoria(head, tipo);
 
@@ -381,13 +380,12 @@ void listarProteinaDecrescente(NodeCategoria *head, TipoCategoria tipo) {
         return;
     }
 
-    // Conexão com a funcão auxiliar
+
     percorrerProteinaDecrescente(cat->raiz_proteina);
 }
 
-//Funcão 5(essa foi chata kkkkk): Responsavel por excluir um alimento 
 
-//reconstroe a arvore de energia 
+// Reconstroi a árvore de energia (usada após remover um alimento)
 NodeArvore* reconstruirArvoreEnergia(NodeAlimento *lista) {
     NodeArvore *novaRaiz = NULL;
 
@@ -400,7 +398,8 @@ NodeArvore* reconstruirArvoreEnergia(NodeAlimento *lista) {
     return novaRaiz;
 }
 
-//reconstroe a arvore de Proteinas
+
+// Reconstroi a árvore de proteína (usada após remover um alimento)
 NodeArvore* reconstruirArvoreProteina(NodeAlimento *lista) {
     NodeArvore *novaRaiz = NULL;
 
@@ -414,7 +413,7 @@ NodeArvore* reconstruirArvoreProteina(NodeAlimento *lista) {
 }
 
 
-// essa funcão auxiliar que é responsavel por procurar um alimento e retiralo da lista 
+// Remove um alimento da lista de alimentos em que ele se encontra em que ele se encontra
 NodeAlimento* removerDaLista(NodeAlimento *head, int numero, NodeAlimento **removido) {
     NodeAlimento *atual = head;
     NodeAlimento *anterior = NULL;
@@ -426,12 +425,10 @@ NodeAlimento* removerDaLista(NodeAlimento *head, int numero, NodeAlimento **remo
 
     if (atual == NULL) {
         *removido = NULL;
-        return head; // não achou
+        return head;
     }
 
-    // Achou
     if (anterior == NULL) {  
-        // primeiro da lista
         head = atual->next;
     } else {
         anterior->next = atual->next;
@@ -441,6 +438,9 @@ NodeAlimento* removerDaLista(NodeAlimento *head, int numero, NodeAlimento **remo
     return head;
 }
 
+
+// Lista todos os alimentos da árvore especificada que estejam num intervalo
+// A árvore utilizada é a de energia e da categoria pedida pelo usuário.
 void listarPorEnergia(NodeArvore *raiz, float min, float max) {
     if (raiz == NULL) return;
 
@@ -465,10 +465,10 @@ void listarPorEnergia(NodeArvore *raiz, float min, float max) {
 }
 
 
+// Lista todos os alimentos que se encontram num intervalo de energia e numa categoria especificados pelo usuário
 void listarEnergiaIntervalo(NodeCategoria *categorias, TipoCategoria nome, float min, float max) {
     NodeCategoria *aux = categorias;
 
-    // Busca a categoria correta
     while (aux != NULL && aux->tipo != nome) {
         aux = aux->next;
     }
@@ -480,12 +480,12 @@ void listarEnergiaIntervalo(NodeCategoria *categorias, TipoCategoria nome, float
 
     printf("\nAlimentos da categoria com energia entre %.2f e %.2f:\n\n", min, max);
 
-    // Chama a função passando a raiz da árvore daquela categoria.
     listarPorEnergia(aux->raiz_energia, min, max);
 }
 
-// Funcao 6: mesma coisa que a 5, mas com proteina
 
+// Lista todos os alimentos da árvore especificada que estejam num intervalo
+// A árvore utilizada é a de proteina e da categoria pedida pelo usuário.
 void listarPorProteina(NodeArvore *raiz, float min, float max) {
     if (raiz == NULL) return;
 
@@ -499,13 +499,14 @@ void listarPorProteina(NodeArvore *raiz, float min, float max) {
         printf("Energia: %.2f\n", aux->dados.energia);
         printf("Proteina: %.2f\n", aux->dados.proteina);
         printf("-----------------------------\n");
-        aux = aux->next;
     }
 
     if (max >= raiz->valor)
         listarPorProteina(raiz->direita, min, max);
 }
 
+
+// Lista todos os alimentos que se encontram num intervalo de proteína e numa categoria especificados pelo usuário
 void listarProteinaIntervalo(NodeCategoria *categorias, TipoCategoria tipo, float min, float max) {
     NodeCategoria *aux = categorias;
 
@@ -524,7 +525,8 @@ void listarProteinaIntervalo(NodeCategoria *categorias, TipoCategoria tipo, floa
 }
 
 
-//funcão 5: oque sera chamado pela main() e elimina o alimento escolido pelo usuario 
+// Remove um alimento de uma categoria especificada pelo usuário
+// O alimento é passado pelo usuário por índice
 void removerAlimento(NodeCategoria *head, TipoCategoria tipo, int numero, bool *houveAlteracoes) {
 
     NodeCategoria *cat = buscar_categoria(head, tipo);
@@ -536,7 +538,6 @@ void removerAlimento(NodeCategoria *head, TipoCategoria tipo, int numero, bool *
 
     NodeAlimento *removido = NULL;
 
-    //Remove da lista ligada
     cat->alimentos = removerDaLista(cat->alimentos, numero, &removido);
 
     if (removido == NULL) {
@@ -544,23 +545,21 @@ void removerAlimento(NodeCategoria *head, TipoCategoria tipo, int numero, bool *
         return;
     }
 
-    //Reconstroi arvore de energia
     liberar_arvore(cat->raiz_energia);
     cat->raiz_energia = reconstruirArvoreEnergia(cat->alimentos);
 
-    //Reconstroi arvore de proteina
     liberar_arvore(cat->raiz_proteina);
     cat->raiz_proteina = reconstruirArvoreProteina(cat->alimentos);
 
-    //Libera o alimento
     free(removido);
 
-    //Marca modificacão
     *houveAlteracoes = true;
 
     printf("\nAlimento removido com sucesso!\n");
 }
 
+
+// Salva os dados no arquivo dados.bin caso alguma alteração tenha acontecido
 void salvarDadosAtualizados(NodeCategoria *head, const char *filename) {
     FILE *file = fopen(filename, "wb");
     if (file == NULL) {
@@ -584,11 +583,13 @@ void salvarDadosAtualizados(NodeCategoria *head, const char *filename) {
     printf("\nDados atualizados salvos com sucesso em %s\n", filename);
 }
 
+
+// Menu principal, onde se encontram todas as opções do usuário
 void menu(){
     int opcao = 0;
-    bool houveAlteracoes = false; // verifica se o usuario escolheu alguma opcão que faz alteracões, se sim ele muda para 1, e entra no if ao final do codigo
+    bool houveAlteracoes = false;
 
-    NodeCategoria *categorias = ler_arquivo_e_popular("dados.bin"); // já estava ai, estão deixei kkkkk, mas ele é responsavel por retornar toda a lista completa já montada 
+    NodeCategoria *categorias = ler_arquivo_e_popular("dados.bin");
 
     while (opcao != 9) {
 

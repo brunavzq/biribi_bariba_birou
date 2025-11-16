@@ -15,7 +15,6 @@ void inserir_categoria_ordenada(NodeCategoria **head, TipoCategoria tipo);
 NodeCategoria *buscar_ou_criar_categoria(NodeCategoria **head, TipoCategoria tipo);
 NodeAlimento* inserir_alimento_ordenado(NodeCategoria *categoria, Alimento alimento);
 NodeCategoria *ler_arquivo_e_popular(const char *filename);
-void imprimir_tudo(NodeCategoria *head);
 void liberar_arvore(NodeArvore* raiz);
 void liberar_tudo(NodeCategoria *head);
 void limparEntrada();

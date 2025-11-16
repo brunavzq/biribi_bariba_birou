@@ -30,10 +30,12 @@ typedef struct {
     float proteina;
 } Alimento;
 
+
 typedef struct NodeAlimento {
     Alimento dados;
     struct NodeAlimento *next;
 } NodeAlimento;
+
 
 typedef struct NodeArvore {
     float valor;
@@ -41,6 +43,7 @@ typedef struct NodeArvore {
     struct NodeArvore *direita;
     NodeAlimento *alimento;
 } NodeArvore;
+
 
 typedef struct NodeCategoria {
     TipoCategoria tipo;
