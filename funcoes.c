@@ -555,6 +555,10 @@ void menu(){
             scanf("%f", &max);
             limparEntrada();
 
+            // AVISO PARA BRUNA:
+            // A IDEIA DO 5 E DO 6 É A MESMA, ENTÃO VOCÊ PODE FAZER UMA FUNÇÃO SÓ
+            // QUE FAÇA OS DOIS
+
             //listarEnergiaIntervalo(categorias, nome, min, max);
             }
             break;
@@ -572,6 +576,10 @@ void menu(){
             printf("Proteína máxima: ");
             scanf("%f", &max);
             limparEntrada();
+
+            // AVISO PARA BRUNA:
+            // A IDEIA DO 5 E DO 6 É A MESMA, ENTÃO VOCÊ PODE FAZER UMA FUNÇÃO SÓ
+            // QUE FAÇA OS DOIS
 
             //listarProteinaIntervalo(categorias, nome, min, max);
             }
@@ -606,11 +614,9 @@ void menu(){
         }
     }
 
-    // é a parte que eu comentei la em cima, se o usuario escolheu alguma opcão de alterar a lista, ele vai cair nesse if 
     if (houveAlteracoes == true){
         //salvarDadosAtualizados(categorias, "dados.bin");
     }
 
-    //libera tudo, meio auto explicativo né 
     liberar_tudo(categorias);
 }
