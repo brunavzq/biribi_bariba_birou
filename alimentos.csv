@@ -25,8 +25,8 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 24;Cereais, mistura para vitamina, trigo, cevada e aveia;381;8.9;Cereais e derivados
 25;Cereal matinal, milho;365;7.2;Cereais e derivados
 26;Cereal matinal, milho, açúcar;377;4.7;Cereais e derivados
-27;Creme de arroz, pó;386;7.0;Cereais e derivados
-28;Creme de milho, pó;333;4.8;Cereais e derivados
+27;Creme de arroz, po;386;7.0;Cereais e derivados
+28;Creme de milho, po;333;4.8;Cereais e derivados
 29;Curau, milho verde;78;2.4;Cereais e derivados
 30;Curau, milho verde, mistura para;402;2.2;Cereais e derivados
 31;Farinha, de arroz, enriquecida;363;1.3;Cereais e derivados
@@ -37,14 +37,14 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 36;Farinha, láctea, de cereais;415;11.9;Cereais e derivados
 37;Lasanha, massa fresca, cozida;164;5.8;Cereais e derivados
 38;Lasanha, massa fresca, crua;220;7.0;Cereais e derivados
-39;Macarrão, instantâneo;436;8.8;Cereais e derivados
+39;Macarrão, instantaneo;436;8.8;Cereais e derivados
 40;Macarrão, trigo, cru;371;10.0;Cereais e derivados
 41;Macarrão, trigo, cru, com ovos;371;10.3;Cereais e derivados
 42;Milho, amido, cru;361;0.6;Cereais e derivados
 43;Milho, fubá, cru;353;7.2;Cereais e derivados
 44;Milho, verde, cru;138;6.6;Cereais e derivados
 45;Milho, verde, enlatado, drenado;98;3.2;Cereais e derivados
-46;Mingau tradicional, pó;373;0.6;Cereais e derivados
+46;Mingau tradicional, po;373;0.6;Cereais e derivados
 47;Pamonha, barra para cozimento, précozida;171;2.6;Cereais e derivados
 48;Pão, aveia, forma;343;12.4;Cereais e derivados
 49;Pão, de soja;309;11.3;Cereais e derivados
@@ -59,108 +59,108 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 58;Pastel, de queijo, frito;422;8.7;Cereais e derivados
 59;Pastel, massa, crua;310;6.9;Cereais e derivados
 60;Pastel, massa, frita;570;6.0;Cereais e derivados
-61;Pipoca, com óleo de soja, sem sal;448;9.9;Cereais e derivados
+61;Pipoca, com oleo de soja, sem sal;448;9.9;Cereais e derivados
 62;Polenta, précozida;103;2.3;Cereais e derivados
 63;Torrada, pão francês;377;10.5;Cereais e derivados
-64;Abóbora, cabotian, cozida;48;1.4;Verduras, hortaliças e derivados
-65;Abóbora, cabotian, crua;39;1.7;Verduras, hortaliças e derivados
-66;Abóbora, menina brasileira, crua;14;0.6;Verduras, hortaliças e derivados
-67;Abóbora, moranga, crua;12;1.0;Verduras, hortaliças e derivados
-68;Abóbora, moranga, refogada;29;0.4;Verduras, hortaliças e derivados
-69;Abobora, pescoço, crua;24;0.7;Verduras, hortaliças e derivados
-70;Abobrinha, italiana, cozida;15;1.1;Verduras, hortaliças e derivados
-71;Abobrinha, italiana, crua;19;1.1;Verduras, hortaliças e derivados
-72;Abobrinha, italiana, refogada;24;1.1;Verduras, hortaliças e derivados
-73;Abobrinha, paulista, crua;31;0.6;Verduras, hortaliças e derivados
-74;Acelga, crua;21;1.4;Verduras, hortaliças e derivados
-75;Agrião, cru;17;2.7;Verduras, hortaliças e derivados
-76;Aipo, cru;19;0.8;Verduras, hortaliças e derivados
-77;Alface, americana, crua;9;0.6;Verduras, hortaliças e derivados
-78;Alface, crespa, crua;11;1.3;Verduras, hortaliças e derivados
-79;Alface, lisa, crua;14;1.7;Verduras, hortaliças e derivados
-80;Alface, roxa, crua;13;0.9;Verduras, hortaliças e derivados
-81;Alfavaca, crua;29;2.7;Verduras, hortaliças e derivados
-82;Alho, cru;113;7.0;Verduras, hortaliças e derivados
-83;Alhoporó, cru;32;1.4;Verduras, hortaliças e derivados
-84;Almeirão, cru;18;1.8;Verduras, hortaliças e derivados
-85;Almeirão, refogado;65;1.7;Verduras, hortaliças e derivados
-86;Batata, baroa, cozida;80;0.9;Verduras, hortaliças e derivados
-87;Batata, baroa, crua;101;1.0;Verduras, hortaliças e derivados
-88;Batata, doce, cozida;77;0.6;Verduras, hortaliças e derivados
-89;Batata, doce, crua;118;1.3;Verduras, hortaliças e derivados
-90;Batata, frita, tipo chips, industrializada;543;5.6;Verduras, hortaliças e derivados
-91;Batata, inglesa, cozida;52;1.2;Verduras, hortaliças e derivados
-92;Batata, inglesa, crua;64;1.8;Verduras, hortaliças e derivados
-93;Batata, inglesa, frita;267;5.0;Verduras, hortaliças e derivados
-94;Batata, inglesa, sauté;68;1.3;Verduras, hortaliças e derivados
-95;Berinjela, cozida;19;0.7;Verduras, hortaliças e derivados
-96;Berinjela, crua;20;1.2;Verduras, hortaliças e derivados
-97;Beterraba, cozida;32;1.3;Verduras, hortaliças e derivados
-98;Beterraba, crua;49;1.9;Verduras, hortaliças e derivados
-99;Biscoito, polvilho doce;438;1.3;Verduras, hortaliças e derivados
-100;Brócolis, cozido;25;2.1;Verduras, hortaliças e derivados
-101;Brócolis, cru;25;3.6;Verduras, hortaliças e derivados
-102;Cará, cozido;78;1.5;Verduras, hortaliças e derivados
-103;Cará, cru;96;2.3;Verduras, hortaliças e derivados
-104;Caruru, cru;34;3.2;Verduras, hortaliças e derivados
-105;Catalonha, crua;24;1.9;Verduras, hortaliças e derivados
-106;Catalonha, refogada;63;2.0;Verduras, hortaliças e derivados
-107;Cebola, crua;39;1.7;Verduras, hortaliças e derivados
-108;Cebolinha, crua;20;1.9;Verduras, hortaliças e derivados
-109;Cenoura, cozida;30;0.8;Verduras, hortaliças e derivados
-110;Cenoura, crua;34;1.3;Verduras, hortaliças e derivados
-111;Chicória, crua;14;1.1;Verduras, hortaliças e derivados
-112;Chuchu, cozido;19;0.4;Verduras, hortaliças e derivados
-113;Chuchu, cru;17;0.7;Verduras, hortaliças e derivados
-114;Coentro, folhas desidratadas;309;20.9;Verduras, hortaliças e derivados
-115;Couve, manteiga, crua;27;2.9;Verduras, hortaliças e derivados
-116;Couve, manteiga, refogada;90;1.7;Verduras, hortaliças e derivados
-117;Couveflor, crua;23;1.9;Verduras, hortaliças e derivados
-118;Couveflor, cozida;19;1.2;Verduras, hortaliças e derivados
-119;Espinafre, Nova Zelândia, cru;16;2.0;Verduras, hortaliças e derivados
-120;Espinafre, Nova Zelândia, refogado;67;2.7;Verduras, hortaliças e derivados
-121;Farinha, de mandioca, crua;361;1.6;Verduras, hortaliças e derivados
-122;Farinha, de mandioca, torrada;365;1.2;Verduras, hortaliças e derivados
-123;Farinha, de puba;360;1.6;Verduras, hortaliças e derivados
-124;Fécula, de mandioca;331;0.5;Verduras, hortaliças e derivados
-125;Feijão, broto, cru;39;4.2;Verduras, hortaliças e derivados
-126;Inhame, cru;97;2.1;Verduras, hortaliças e derivados
-127;Jiló, cru;27;1.4;Verduras, hortaliças e derivados
-128;Jurubeba, crua;126;4.4;Verduras, hortaliças e derivados
-129;Mandioca, cozida;125;0.6;Verduras, hortaliças e derivados
-130;Mandioca, crua;151;1.1;Verduras, hortaliças e derivados
-131;Mandioca, farofa, temperada;406;2.1;Verduras, hortaliças e derivados
-132;Mandioca, frita;300;1.4;Verduras, hortaliças e derivados
-133;Manjericão, cru;21;2.0;Verduras, hortaliças e derivados
-134;Maxixe, cru;14;1.4;Verduras, hortaliças e derivados
-135;Mostarda, folha, crua;18;2.1;Verduras, hortaliças e derivados
-136;Nhoque, batata, cozido;181;5.9;Verduras, hortaliças e derivados
-137;Nabo, cru;18;1.2;Verduras, hortaliças e derivados
-138;Palmito, juçara, em conserva;23;1.8;Verduras, hortaliças e derivados
-139;Palmito, pupunha, em conserva;29;2.5;Verduras, hortaliças e derivados
-140;Pão, de queijo, assado;363;5.1;Verduras, hortaliças e derivados
-141;Pão, de queijo, cru;295;3.6;Verduras, hortaliças e derivados
-142;Pepino, cru;10;0.9;Verduras, hortaliças e derivados
-143;Pimentão, amarelo, cru;28;1.2;Verduras, hortaliças e derivados
-144;Pimentão, verde, cru;21;1.1;Verduras, hortaliças e derivados
-145;Pimentão, vermelho, cru;23;1.0;Verduras, hortaliças e derivados
-146;Polvilho, doce;351;0.4;Verduras, hortaliças e derivados
-147;Quiabo, cru;30;1.9;Verduras, hortaliças e derivados
-148;Rabanete, cru;14;1.4;Verduras, hortaliças e derivados
-149;Repolho, branco, cru;17;0.9;Verduras, hortaliças e derivados
-150;Repolho, roxo, cru;31;1.9;Verduras, hortaliças e derivados
-151;Repolho, roxo, refogado;42;1.8;Verduras, hortaliças e derivados
-152;Rúcula, crua;13;1.8;Verduras, hortaliças e derivados
-153;Salsa, crua;33;3.3;Verduras, hortaliças e derivados
-154;Seleta de legumes, enlatada;57;3.4;Verduras, hortaliças e derivados
-155;Serralha, crua;30;2.7;Verduras, hortaliças e derivados
-156;Taioba, crua;34;2.9;Verduras, hortaliças e derivados
-157;Tomate, com semente, cru;15;1.1;Verduras, hortaliças e derivados
-158;Tomate, extrato;61;2.4;Verduras, hortaliças e derivados
-159;Tomate, molho industrializado;38;1.4;Verduras, hortaliças e derivados
-160;Tomate, purê;28;1.4;Verduras, hortaliças e derivados
-161;Tomate, salada;21;0.8;Verduras, hortaliças e derivados
-162;Vagem, crua;25;1.8;Verduras, hortaliças e derivados
+64;Abobora, cabotian, cozida;48;1.4;Verduras, hortalicas e derivados
+65;Abobora, cabotian, crua;39;1.7;Verduras, hortalicas e derivados
+66;Abobora, menina brasileira, crua;14;0.6;Verduras, hortalicas e derivados
+67;Abobora, moranga, crua;12;1.0;Verduras, hortalicas e derivados
+68;Abobora, moranga, refogada;29;0.4;Verduras, hortalicas e derivados
+69;Abobora, pescoço, crua;24;0.7;Verduras, hortalicas e derivados
+70;Abobrinha, italiana, cozida;15;1.1;Verduras, hortalicas e derivados
+71;Abobrinha, italiana, crua;19;1.1;Verduras, hortalicas e derivados
+72;Abobrinha, italiana, refogada;24;1.1;Verduras, hortalicas e derivados
+73;Abobrinha, paulista, crua;31;0.6;Verduras, hortalicas e derivados
+74;Acelga, crua;21;1.4;Verduras, hortalicas e derivados
+75;Agrião, cru;17;2.7;Verduras, hortalicas e derivados
+76;Aipo, cru;19;0.8;Verduras, hortalicas e derivados
+77;Alface, americana, crua;9;0.6;Verduras, hortalicas e derivados
+78;Alface, crespa, crua;11;1.3;Verduras, hortalicas e derivados
+79;Alface, lisa, crua;14;1.7;Verduras, hortalicas e derivados
+80;Alface, roxa, crua;13;0.9;Verduras, hortalicas e derivados
+81;Alfavaca, crua;29;2.7;Verduras, hortalicas e derivados
+82;Alho, cru;113;7.0;Verduras, hortalicas e derivados
+83;Alhoporo, cru;32;1.4;Verduras, hortalicas e derivados
+84;Almeirão, cru;18;1.8;Verduras, hortalicas e derivados
+85;Almeirão, refogado;65;1.7;Verduras, hortalicas e derivados
+86;Batata, baroa, cozida;80;0.9;Verduras, hortalicas e derivados
+87;Batata, baroa, crua;101;1.0;Verduras, hortalicas e derivados
+88;Batata, doce, cozida;77;0.6;Verduras, hortalicas e derivados
+89;Batata, doce, crua;118;1.3;Verduras, hortalicas e derivados
+90;Batata, frita, tipo chips, industrializada;543;5.6;Verduras, hortalicas e derivados
+91;Batata, inglesa, cozida;52;1.2;Verduras, hortalicas e derivados
+92;Batata, inglesa, crua;64;1.8;Verduras, hortalicas e derivados
+93;Batata, inglesa, frita;267;5.0;Verduras, hortalicas e derivados
+94;Batata, inglesa, sauté;68;1.3;Verduras, hortalicas e derivados
+95;Berinjela, cozida;19;0.7;Verduras, hortalicas e derivados
+96;Berinjela, crua;20;1.2;Verduras, hortalicas e derivados
+97;Beterraba, cozida;32;1.3;Verduras, hortalicas e derivados
+98;Beterraba, crua;49;1.9;Verduras, hortalicas e derivados
+99;Biscoito, polvilho doce;438;1.3;Verduras, hortalicas e derivados
+100;Brocolis, cozido;25;2.1;Verduras, hortalicas e derivados
+101;Brocolis, cru;25;3.6;Verduras, hortalicas e derivados
+102;Cará, cozido;78;1.5;Verduras, hortalicas e derivados
+103;Cará, cru;96;2.3;Verduras, hortalicas e derivados
+104;Caruru, cru;34;3.2;Verduras, hortalicas e derivados
+105;Catalonha, crua;24;1.9;Verduras, hortalicas e derivados
+106;Catalonha, refogada;63;2.0;Verduras, hortalicas e derivados
+107;Cebola, crua;39;1.7;Verduras, hortalicas e derivados
+108;Cebolinha, crua;20;1.9;Verduras, hortalicas e derivados
+109;Cenoura, cozida;30;0.8;Verduras, hortalicas e derivados
+110;Cenoura, crua;34;1.3;Verduras, hortalicas e derivados
+111;Chicoria, crua;14;1.1;Verduras, hortalicas e derivados
+112;Chuchu, cozido;19;0.4;Verduras, hortalicas e derivados
+113;Chuchu, cru;17;0.7;Verduras, hortalicas e derivados
+114;Coentro, folhas desidratadas;309;20.9;Verduras, hortalicas e derivados
+115;Couve, manteiga, crua;27;2.9;Verduras, hortalicas e derivados
+116;Couve, manteiga, refogada;90;1.7;Verduras, hortalicas e derivados
+117;Couveflor, crua;23;1.9;Verduras, hortalicas e derivados
+118;Couveflor, cozida;19;1.2;Verduras, hortalicas e derivados
+119;Espinafre, Nova Zelandia, cru;16;2.0;Verduras, hortalicas e derivados
+120;Espinafre, Nova Zelandia, refogado;67;2.7;Verduras, hortalicas e derivados
+121;Farinha, de mandioca, crua;361;1.6;Verduras, hortalicas e derivados
+122;Farinha, de mandioca, torrada;365;1.2;Verduras, hortalicas e derivados
+123;Farinha, de puba;360;1.6;Verduras, hortalicas e derivados
+124;Fécula, de mandioca;331;0.5;Verduras, hortalicas e derivados
+125;Feijão, broto, cru;39;4.2;Verduras, hortalicas e derivados
+126;Inhame, cru;97;2.1;Verduras, hortalicas e derivados
+127;Jilo, cru;27;1.4;Verduras, hortalicas e derivados
+128;Jurubeba, crua;126;4.4;Verduras, hortalicas e derivados
+129;Mandioca, cozida;125;0.6;Verduras, hortalicas e derivados
+130;Mandioca, crua;151;1.1;Verduras, hortalicas e derivados
+131;Mandioca, farofa, temperada;406;2.1;Verduras, hortalicas e derivados
+132;Mandioca, frita;300;1.4;Verduras, hortalicas e derivados
+133;Manjericão, cru;21;2.0;Verduras, hortalicas e derivados
+134;Maxixe, cru;14;1.4;Verduras, hortalicas e derivados
+135;Mostarda, folha, crua;18;2.1;Verduras, hortalicas e derivados
+136;Nhoque, batata, cozido;181;5.9;Verduras, hortalicas e derivados
+137;Nabo, cru;18;1.2;Verduras, hortalicas e derivados
+138;Palmito, juçara, em conserva;23;1.8;Verduras, hortalicas e derivados
+139;Palmito, pupunha, em conserva;29;2.5;Verduras, hortalicas e derivados
+140;Pão, de queijo, assado;363;5.1;Verduras, hortalicas e derivados
+141;Pão, de queijo, cru;295;3.6;Verduras, hortalicas e derivados
+142;Pepino, cru;10;0.9;Verduras, hortalicas e derivados
+143;Pimentão, amarelo, cru;28;1.2;Verduras, hortalicas e derivados
+144;Pimentão, verde, cru;21;1.1;Verduras, hortalicas e derivados
+145;Pimentão, vermelho, cru;23;1.0;Verduras, hortalicas e derivados
+146;Polvilho, doce;351;0.4;Verduras, hortalicas e derivados
+147;Quiabo, cru;30;1.9;Verduras, hortalicas e derivados
+148;Rabanete, cru;14;1.4;Verduras, hortalicas e derivados
+149;Repolho, branco, cru;17;0.9;Verduras, hortalicas e derivados
+150;Repolho, roxo, cru;31;1.9;Verduras, hortalicas e derivados
+151;Repolho, roxo, refogado;42;1.8;Verduras, hortalicas e derivados
+152;Rúcula, crua;13;1.8;Verduras, hortalicas e derivados
+153;Salsa, crua;33;3.3;Verduras, hortalicas e derivados
+154;Seleta de legumes, enlatada;57;3.4;Verduras, hortalicas e derivados
+155;Serralha, crua;30;2.7;Verduras, hortalicas e derivados
+156;Taioba, crua;34;2.9;Verduras, hortalicas e derivados
+157;Tomate, com semente, cru;15;1.1;Verduras, hortalicas e derivados
+158;Tomate, extrato;61;2.4;Verduras, hortalicas e derivados
+159;Tomate, molho industrializado;38;1.4;Verduras, hortalicas e derivados
+160;Tomate, purê;28;1.4;Verduras, hortalicas e derivados
+161;Tomate, salada;21;0.8;Verduras, hortalicas e derivados
+162;Vagem, crua;25;1.8;Verduras, hortalicas e derivados
 163;Abacate, cru;96;1.2;Frutas e derivados
 164;Abacaxi, cru;48;0.9;Frutas e derivados
 165;Abacaxi, polpa, congelada;31;0.5;Frutas e derivados
@@ -172,7 +172,7 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 171;Ameixa, calda, enlatada;183;0.4;Frutas e derivados
 172;Ameixa, crua;53;0.8;Frutas e derivados
 173;Ameixa, em calda, enlatada, drenada;177;1.0;Frutas e derivados
-174;Atemóia, crua;97;1.0;Frutas e derivados
+174;Atemoia, crua;97;1.0;Frutas e derivados
 175;Banana, da terra, crua;128;1.4;Frutas e derivados
 176;Banana, doce em barra;280;2.2;Frutas e derivados
 177;Banana, figo, crua;105;1.1;Frutas e derivados
@@ -257,25 +257,25 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 256;Uva, Itália, crua;53;0.7;Frutas e derivados
 257;Uva, Rubi, crua;49;0.6;Frutas e derivados
 258;Uva, suco concentrado, envasado;58;0;Frutas e derivados
-259;Azeite, de dendê;884;NA;Gorduras e óleos
-260;Azeite, de oliva, extra virgem;884;NA;Gorduras e óleos
-261;Manteiga, com sal;726;0.4;Gorduras e óleos
-262;Manteiga, sem sal;758;0.4;Gorduras e óleos
-263;Margarina, com óleo hidrogenado, com sal 65 de lipídeos;596;0;Gorduras e óleos
-264;Margarina, com óleo hidrogenado, sem sal 80 de lipídeos;723;0;Gorduras e óleos
-265;Margarina, com óleo interesterificado, com sal 65de lipídeos;594;0;Gorduras e óleos
-266;Margarina, com óleo interesterificado, sem sal 65 de lipídeos;593;0;Gorduras e óleos
-267;Óleo, de babaçu;884;NA;Gorduras e óleos
-268;Óleo, de canola;884;NA;Gorduras e óleos
-269;Óleo, de girassol;884;NA;Gorduras e óleos
-270;Óleo, de milho;884;NA;Gorduras e óleos
-271;Óleo, de pequi;884;NA;Gorduras e óleos
-272;Óleo, de soja;884;NA;Gorduras e óleos
+259;Azeite, de dendê;884;NA;Gorduras e oleos
+260;Azeite, de oliva, extra virgem;884;NA;Gorduras e oleos
+261;Manteiga, com sal;726;0.4;Gorduras e oleos
+262;Manteiga, sem sal;758;0.4;Gorduras e oleos
+263;Margarina, com oleo hidrogenado, com sal 65 de lipídeos;596;0;Gorduras e oleos
+264;Margarina, com oleo hidrogenado, sem sal 80 de lipídeos;723;0;Gorduras e oleos
+265;Margarina, com oleo interesterificado, com sal 65de lipídeos;594;0;Gorduras e oleos
+266;Margarina, com oleo interesterificado, sem sal 65 de lipídeos;593;0;Gorduras e oleos
+267;oleo, de babaçu;884;NA;Gorduras e oleos
+268;oleo, de canola;884;NA;Gorduras e oleos
+269;oleo, de girassol;884;NA;Gorduras e oleos
+270;oleo, de milho;884;NA;Gorduras e oleos
+271;oleo, de pequi;884;NA;Gorduras e oleos
+272;oleo, de soja;884;NA;Gorduras e oleos
 273;Abadejo, filé, congelado, assado;112;23.5;Pescados e frutos do mar
 274;Abadejo, filé, congelado,cozido;91;19.3;Pescados e frutos do mar
 275;Abadejo, filé, congelado, cru;59;13.1;Pescados e frutos do mar
 276;Abadejo, filé, congelado, grelhado;130;27.6;Pescados e frutos do mar
-277;Atum, conserva em óleo;166;26.2;Pescados e frutos do mar
+277;Atum, conserva em oleo;166;26.2;Pescados e frutos do mar
 278;Atum, fresco, cru;118;25.7;Pescados e frutos do mar
 279;Bacalhau, salgado, cru;136;29.0;Pescados e frutos do mar
 280;Bacalhau, salgado, refogado;ND;ND;Pescados e frutos do mar
@@ -317,7 +317,7 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 316;Salmão, sem pele, fresco, cru;170;19.3;Pescados e frutos do mar
 317;Salmão, sem pele, fresco, grelhado;243;26.1;Pescados e frutos do mar
 318;Sardinha, assada;164;32.2;Pescados e frutos do mar
-319;Sardinha, conserva em óleo;285;15.9;Pescados e frutos do mar
+319;Sardinha, conserva em oleo;285;15.9;Pescados e frutos do mar
 320;Sardinha, frita;257;33.4;Pescados e frutos do mar
 321;Sardinha, inteira, crua;114;21.1;Pescados e frutos do mar
 322;Tucunaré, filé, congelado, cru;88;18.0;Pescados e frutos do mar
@@ -454,10 +454,10 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 453;Leite, condensado;313;7.7;Leite e derivados
 454;Leite, de cabra;66;3.1;Leite e derivados
 455;Leite, de vaca, achocolatado;83;2.1;Leite e derivados
-456;Leite, de vaca, desnatado, pó;362;34.7;Leite e derivados
+456;Leite, de vaca, desnatado, po;362;34.7;Leite e derivados
 457;Leite, de vaca, desnatado, UHT;ND;ND;Leite e derivados
 458;Leite, de vaca, integral;ND;ND;Leite e derivados
-459;Leite, de vaca, integral, pó;497;25.4;Leite e derivados
+459;Leite, de vaca, integral, po;497;25.4;Leite e derivados
 460;Leite, fermentado;70;1.9;Leite e derivados
 461;Queijo, minas, frescal;264;17.4;Leite e derivados
 462;Queijo, minas, meia cura;321;21.2;Leite e derivados
@@ -468,19 +468,19 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 467;Queijo, prato;360;22.7;Leite e derivados
 468;Queijo, requeijão, cremoso;257;9.6;Leite e derivados
 469;Queijo, ricota;140;12.6;Leite e derivados
-470;Bebida isotônica, sabores variados;26;0.0;Bebidas (alcoólicas e não alcoólicas)
-471;Café, infusão 10;9;0.7;Bebidas (alcoólicas e não alcoólicas)
-473;Cana, caldo de;65;0;Bebidas (alcoólicas e não alcoólicas)
-474;Cerveja, pilsen 2;41;0.6;Bebidas (alcoólicas e não alcoólicas)
-475;Chá, ervadoce, infusão 5;1;0.0;Bebidas (alcoólicas e não alcoólicas)
-476;Chá, mate, infusão 5;3;0.0;Bebidas (alcoólicas e não alcoólicas)
-477;Chá, preto, infusão 5;2;0.0;Bebidas (alcoólicas e não alcoólicas)
-478;Coco, água de;22;0.0;Bebidas (alcoólicas e não alcoólicas)
-479;Refrigerante, tipo água tônica;31;0.0;Bebidas (alcoólicas e não alcoólicas)
-480;Refrigerante, tipo cola;34;0.0;Bebidas (alcoólicas e não alcoólicas)
-481;Refrigerante, tipo guaraná;39;0.0;Bebidas (alcoólicas e não alcoólicas)
-482;Refrigerante, tipo laranja;46;0.0;Bebidas (alcoólicas e não alcoólicas)
-483;Refrigerante, tipo limão;40;0.0;Bebidas (alcoólicas e não alcoólicas)
+470;Bebida isotônica, sabores variados;26;0.0;Bebidas (alcoolicas e não alcoolicas)
+471;Café, infusão 10;9;0.7;Bebidas (alcoolicas e não alcoolicas)
+473;Cana, caldo de;65;0;Bebidas (alcoolicas e não alcoolicas)
+474;Cerveja, pilsen 2;41;0.6;Bebidas (alcoolicas e não alcoolicas)
+475;Chá, ervadoce, infusão 5;1;0.0;Bebidas (alcoolicas e não alcoolicas)
+476;Chá, mate, infusão 5;3;0.0;Bebidas (alcoolicas e não alcoolicas)
+477;Chá, preto, infusão 5;2;0.0;Bebidas (alcoolicas e não alcoolicas)
+478;Coco, água de;22;0.0;Bebidas (alcoolicas e não alcoolicas)
+479;Refrigerante, tipo água tônica;31;0.0;Bebidas (alcoolicas e não alcoolicas)
+480;Refrigerante, tipo cola;34;0.0;Bebidas (alcoolicas e não alcoolicas)
+481;Refrigerante, tipo guaraná;39;0.0;Bebidas (alcoolicas e não alcoolicas)
+482;Refrigerante, tipo laranja;46;0.0;Bebidas (alcoolicas e não alcoolicas)
+483;Refrigerante, tipo limão;40;0.0;Bebidas (alcoolicas e não alcoolicas)
 484;Omelete, de queijo;268;15.6;Ovos e derivados
 485;Ovo, de codorna, inteiro, cru;177;13.7;Ovos e derivados
 486;Ovo, de galinha, clara, cozida/10minutos;59;13.4;Ovos e derivados
@@ -488,36 +488,36 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 488;Ovo, de galinha, inteiro, cozido/10minutos;146;13.3;Ovos e derivados
 489;Ovo, de galinha, inteiro, cru;143;13.0;Ovos e derivados
 490;Ovo, de galinha, inteiro, frito;240;15.6;Ovos e derivados
-491;Achocolatado, pó;401;4.2;Produtos açucarados
-492;Açúcar, cristal;387;0.3;Produtos açucarados
-472;Tr;0;0;Produtos açucarados
-493;Açúcar, mascavo;369;0.8;Produtos açucarados
-494;Açúcar, refinado;387;0.3;Produtos açucarados
-495;Chocolate, ao leite;540;7.2;Produtos açucarados
-496;Chocolate, ao leite, com castanha do Pará;559;7.4;Produtos açucarados
-497;Chocolate, ao leite, dietético;557;6.9;Produtos açucarados
-498;Chocolate, meio amargo;475;4.9;Produtos açucarados
-499;Cocada branca;449;1.1;Produtos açucarados
-500;Doce, de abóbora, cremoso;199;0.9;Produtos açucarados
-501;Doce, de leite, cremoso;306;5.5;Produtos açucarados
-502;Geléia, mocotó, natural;106;2.1;Produtos açucarados
-503;Glicose de milho;292;0.0;Produtos açucarados
-504;Maria mole;301;3.8;Produtos açucarados
-505;Maria mole, coco queimado;307;3.9;Produtos açucarados
-506;Marmelada;257;0.4;Produtos açucarados
-507;Mel, de abelha;309;0.0;Produtos açucarados
-508;Melado;297;0.0;Produtos açucarados
-509;Quindim;411;4.7;Produtos açucarados
-510;Rapadura;352;1.0;Produtos açucarados
-511;Café, pó, torrado;419;14.7;Miscelâneas
-512;Capuccino, pó;417;11.3;Miscelâneas
-513;Fermento em pó, químico;90;0.5;Miscelâneas
-514;Fermento, biológico, levedura, tablete;90;17.0;Miscelâneas
-515;Gelatina, sabores variados, pó;380;8.9;Miscelâneas
-516;Sal, dietético;NA;NA;Miscelâneas
-517;Sal, grosso;NA;NA;Miscelâneas
-518;Shoyu;61;3.3;Miscelâneas
-519;Tempero a base de sal;21;2.7;Miscelâneas
+491;Achocolatado, po;401;4.2;Produtos acucarados
+492;Açúcar, cristal;387;0.3;Produtos acucarados
+472;Tr;0;0;Produtos acucarados
+493;Açúcar, mascavo;369;0.8;Produtos acucarados
+494;Açúcar, refinado;387;0.3;Produtos acucarados
+495;Chocolate, ao leite;540;7.2;Produtos acucarados
+496;Chocolate, ao leite, com castanha do Pará;559;7.4;Produtos acucarados
+497;Chocolate, ao leite, dietético;557;6.9;Produtos acucarados
+498;Chocolate, meio amargo;475;4.9;Produtos acucarados
+499;Cocada branca;449;1.1;Produtos acucarados
+500;Doce, de abobora, cremoso;199;0.9;Produtos acucarados
+501;Doce, de leite, cremoso;306;5.5;Produtos acucarados
+502;Geléia, mocoto, natural;106;2.1;Produtos acucarados
+503;Glicose de milho;292;0.0;Produtos acucarados
+504;Maria mole;301;3.8;Produtos acucarados
+505;Maria mole, coco queimado;307;3.9;Produtos acucarados
+506;Marmelada;257;0.4;Produtos acucarados
+507;Mel, de abelha;309;0.0;Produtos acucarados
+508;Melado;297;0.0;Produtos acucarados
+509;Quindim;411;4.7;Produtos acucarados
+510;Rapadura;352;1.0;Produtos acucarados
+511;Café, po, torrado;419;14.7;Miscelaneas
+512;Capuccino, po;417;11.3;Miscelaneas
+513;Fermento em po, químico;90;0.5;Miscelaneas
+514;Fermento, biologico, levedura, tablete;90;17.0;Miscelaneas
+515;Gelatina, sabores variados, po;380;8.9;Miscelaneas
+516;Sal, dietético;NA;NA;Miscelaneas
+517;Sal, grosso;NA;NA;Miscelaneas
+518;Shoyu;61;3.3;Miscelaneas
+519;Tempero a base de sal;21;2.7;Miscelaneas
 520;Azeitona, preta, conserva;194;1.2;Outros alimentos industrializados
 521;Azeitona, verde, conserva;137;0.9;Outros alimentos industrializados
 522;Chantilly, spray, com gordura vegetal;315;0.5;Outros alimentos industrializados
@@ -581,7 +581,7 @@ Número;Descrição;Energia (kcal);Proteína (g);Categoria
 580;Pédemoleque, amendoim;503;13.2;Leguminosas e derivados
 581;Soja, farinha;404;36.0;Leguminosas e derivados
 582;Soja, extrato solúvel, natural, fluido;39;2.4;Leguminosas e derivados
-583;Soja, extrato solúvel, pó;459;35.7;Leguminosas e derivados
+583;Soja, extrato solúvel, po;459;35.7;Leguminosas e derivados
 584;Soja, queijo tofu;64;6.6;Leguminosas e derivados
 585;Tremoço, cru;381;33.6;Leguminosas e derivados
 586;Tremoço, em conserva;121;11.1;Leguminosas e derivados
