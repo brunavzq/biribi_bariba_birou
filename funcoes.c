@@ -492,8 +492,8 @@ void menu(){
         printf("2 - Listar alimentos de uma categoria\n");
         printf("3 - Listar alimentos por energia (decrescente)\n");
         printf("4 - Listar alimentos por proteína (decrescente)\n");
-        printf("5 - Alimentos com energia entre valores\n");
-        printf("6 - Alimentos com proteína entre valores\n");
+        printf("5 - Alimentos com energia dentro de um intervalo\n");
+        printf("6 - Alimentos com proteína dentro de um intervalo\n");
         printf("7 - Remover categoria\n");
         printf("8 - Remover alimento\n");
         printf("9 - Sair\n");
@@ -505,11 +505,15 @@ void menu(){
 
         switch (opcao) {
         case 1: {
+            puts("Opção escolhida:");
+            puts("LISTAR TODAS AS CATEGORIAS");
             listarCategorias(categorias);
-        }
+            }
             break;
 
         case 2: {
+            puts("Opção escolhida:");
+            puts("LISTAR ALIMENTOS DE UMA CATEGORIA");
             TipoCategoria tipo = perguntarCategoriaValida();
             if (tipo != CATEGORIA_INVALIDA) {
                 listarAlimentosDaCategoria(categorias, tipo);
@@ -518,6 +522,8 @@ void menu(){
             break;
 
         case 3: {
+            puts("Opção escolhida:");
+            puts("LISTAR ALIMENTOS POR ENERGIA");
             TipoCategoria tipo = perguntarCategoriaValida();
             if (tipo != CATEGORIA_INVALIDA) {
                 listarEnergiaDecrescente(categorias, tipo);
@@ -526,6 +532,8 @@ void menu(){
             break;
 
         case 4: {
+            puts("Opção escolhida:");
+            puts("LISTAR ALIMENTOS POR PROTEÍNA");
             TipoCategoria tipo = perguntarCategoriaValida();
             if (tipo != CATEGORIA_INVALIDA) {
                 listarProteinaDecrescente(categorias, tipo); 
@@ -534,11 +542,10 @@ void menu(){
             break; 
         
         case 5: {
-            char nome[50];
+            puts("Opção escolhida:");
+            puts("ALIMENTOS COM ENERGIA DENTRO DE UM INTERVALO");
+            TipoCategoria tipo = perguntarCategoriaValida();
             float min, max;
-
-            printf("Categoria: ");
-            lerString(nome, 50);
 
             printf("Energia mínima: ");
             scanf("%f", &min);
@@ -553,11 +560,10 @@ void menu(){
             break;
 
         case 6: {
-            char nome[50];
+            puts("Opção escolhida:");
+            puts("ALIMENTOS COM PROTEÍNA DENTRO DE UM INTERVALO");
+            TipoCategoria tipo = perguntarCategoriaValida();
             float min, max;
-
-            printf("Categoria: ");
-            lerString(nome, 50);
 
             printf("Proteína mínima: ");
             scanf("%f", &min);
@@ -572,9 +578,9 @@ void menu(){
             break;
 
         case 7: {
-            char nome[50];
-            printf("Categoria a remover: ");
-            lerString(nome, 50);
+            puts("Opção escolhida:");
+            puts("REMOVER CATEGORIA");
+            TipoCategoria tipo = perguntarCategoriaValida();
 
             //removerCategoria(&categorias, nome);
             }
