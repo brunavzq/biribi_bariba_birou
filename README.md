@@ -3,7 +3,7 @@
 ## P1
 - [x] Leitura do csv para o formato bin
 - [x] Gerar CSV novamente (precisamos de todos os alimentos dessa vez)
-- [ ] Deixar a visualização de acentuação normal no terminal.
+- [x] Deixar a visualização de acentuação normal no terminal.
 
 ## P2
 - [x] Ler dados do arquivo BIN e armazenar em memória de forma dinâmica

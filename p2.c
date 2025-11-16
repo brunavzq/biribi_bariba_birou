@@ -4,6 +4,23 @@
 #include <string.h>
 #include <stdbool.h>
 
+#ifdef _WIN32
+    #include <windows.h>
+#else
+    #include <locale.h>
+#endif
+
+void configurar_console(void) {
+    #ifdef _WIN32
+        // Configura UTF-8 para o console Windows
+        SetConsoleOutputCP(CP_UTF8);
+        SetConsoleCP(CP_UTF8);
+    #else
+        // Para sistemas Unix/Linux
+        setlocale(LC_ALL, "pt_BR.UTF-8");
+#endif
+}
+
 TipoCategoria string_to_enum(const char *nomeString){
     if (strcmp(nomeString, "Cereais e derivados") == 0) return CEREAIS_E_DERIVADOS;
     if (strcmp(nomeString, "Verduras, hortaliças e derivados") == 0) return VERDURAS_HORTALICAS_E_DERIVADOS;
@@ -298,13 +315,17 @@ void listarAlimentosDaCategoria(NodeCategoria *head, TipoCategoria tipo) {
 
 TipoCategoria perguntarCategoriaValida() {
     TipoCategoria tipo = CATEGORIA_INVALIDA;
-    do {
-        char nome[50];
-        printf("Digite um nome válido de categoria: ");
+    char nome[50];
+    
+    while (tipo == CATEGORIA_INVALIDA) {
+        printf("Digite o nome da categoria: ");
         lerString(nome, 50);
-
         tipo = string_to_enum(nome);
-    } while (tipo == CATEGORIA_INVALIDA);
+        
+        if (tipo == CATEGORIA_INVALIDA) {
+            printf("Erro: Categoria '%s' nao existe. Tente novamente.\n", nome);
+        }
+    }
     
     return tipo;
 }
@@ -484,6 +505,7 @@ void removerAlimento(NodeCategoria *head, TipoCategoria tipo, int numero, bool *
 }
 
 int main() {
+    configurar_console();
     int opcao = 0;
     bool houveAlteracoes = false; // verifica se o usuario escolheu alguma opção que faz alterações, se sim ele muda para 1, e entra no if ao final do codigo
 
